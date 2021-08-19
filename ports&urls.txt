@@ -1,0 +1,28 @@
+Config Server: 8888
+
+Limit Service: 8080/8081
+http://localhost:8080/limits
+http://localhost:8081/limits
+
+Eureka: 8761
+http://localhost:8761/
+
+Zipkin: 9411
+http://localhost:9411/zipkin/
+
+Currency Exchange Service: 8000
+http://localhost:8000/currency-exchange/from/usd/to/azn
+http://localhost:8000/currency-exchange/from/tl/to/azn
+http://localhost:8000/currency-exchange/from/usd/to/tl
+http://localhost:8000/sample-api
+
+Currency Conversion Service: 8100
+http://localhost:8100/currency-conversion/from/usd/to/azn/quantity/150
+http://localhost:8100/currency-conversion/from/tl/to/azn/quantity/50
+http://localhost:8100/currency-conversion/from/azn/to/usd/quantity/250
+
+API Gateway: 8765
+http://localhost:8765/sahilappayev
+http://localhost:8765/currency-exchange/from/usd/to/azn
+http://localhost:8765/currency-conversion/from/usd/to/azn/quantity/150
+http://localhost:8765/currency-conversion-new/from/usd/to/azn/quantity/170

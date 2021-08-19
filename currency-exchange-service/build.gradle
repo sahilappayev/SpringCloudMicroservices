@@ -26,12 +26,18 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	implementation 'com.github.ben-manes.caffeine:caffeine'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.5.2'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.5.3'
 	implementation group: 'io.github.resilience4j', name: 'resilience4j-spring-boot2'
 	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '3.0.3'
 	implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.9'
+	// Distributed Tracing
+	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+	implementation 'org.springframework.cloud:spring-cloud-sleuth-zipkin'
+	implementation 'org.springframework.amqp:spring-rabbit'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

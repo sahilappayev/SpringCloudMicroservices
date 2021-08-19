@@ -5,6 +5,9 @@ spring:
     import: optional:configserver:http://localhost:8888
     activate:
       on-profile:
+  sleuth:
+    sampler:
+      probability: 1.0
 server:
   port: 8100
 springdoc:

@@ -7,6 +7,9 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+  sleuth:
+    sampler:
+      probability: 1.0
 server:
   port: 8765
 eureka:

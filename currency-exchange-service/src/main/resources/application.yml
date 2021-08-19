@@ -8,11 +8,17 @@ spring:
   jpa:
     show-sql: true
     defer-datasource-initialization: true
+    open-in-view: false
+  cache:
+    type: caffeine
   datasource:
     url: jdbc:h2:mem:testdb
   h2:
     console:
       enabled: true
+  sleuth:
+    sampler:
+      probability: 1.0
 server:
   port: 8000
 springdoc:
