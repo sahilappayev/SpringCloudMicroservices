@@ -38,3 +38,7 @@ resilience4j:
         maxRetryAttempts: 5
         waitDuration: 1s
         enableExponentialBackoff: true
+logging:
+  pattern:
+    console: '[%p] %d{yyyy-MM-dd HH:mm:ss} [THREAD - %t] %-5p %c:%L - %m%n'
+    file: '[%p] %d{yyyy-MM-dd HH:mm:ss} [THREAD - %t] %-5p %c:%L - %m%n'

@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  currency-exchange-service:
+    image: currency-exchange
+    ports:
+      - "8000:8000"
+    networks:
+      - currency-network
+    depends_on:
+      - naming-service
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-service:8761/eureka
+  naming-service:
+    image: naming-service
+    ports:
+      - "8761:8761"
+    networks:
+      - currency-network
+networks:
+  currency-network:

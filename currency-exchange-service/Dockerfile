@@ -1,6 +1,5 @@
 FROM openjdk:11
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
+EXPOSE 8000
+COPY  build/libs/currency-exchange-service-0.0.1.jar app.jar
 ENV TZ Asia/Baku
 ENTRYPOINT ["java", "-jar", "/app.jar"]
-
