@@ -1,7 +1,26 @@
+buildscript {
+	repositories {
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies {
+		classpath "gradle.plugin.com.avast.gradle:gradle-docker-compose-plugin:0.14.3"
+	}
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.5.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id "com.avast.gradle.docker-compose" version "0.14.3"
+}
+
+apply plugin: "com.avast.gradle.docker-compose"
+
+
+jar{
+	enabled = false
 }
 
 group = 'az.sahil.microservices'
@@ -36,6 +55,10 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-sleuth-zipkin'
 	implementation 'org.springframework.amqp:spring-rabbit'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dockerCompose{
+	useComposeFiles = ['docker-compose.yaml']
 }
 
 dependencyManagement {
